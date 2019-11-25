@@ -11,6 +11,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>xc-service-manage-cms</artifactId>
+
     <dependencies>
         <dependency>
             <groupId>com.xuecheng</groupId>

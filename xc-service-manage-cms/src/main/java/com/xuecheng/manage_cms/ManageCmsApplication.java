@@ -6,16 +6,20 @@ import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.context.annotation.ComponentScan;
 
 /**
- * @author Administrator
- * @version 1.0
- * @create 2018-09-12 17:13
- **/
+ * @author MuYang
+ * @date 2019/11/25
+ */
 @SpringBootApplication
-@EntityScan("com.xuecheng.framework.domain.cms")//扫描实体类
-@ComponentScan(basePackages={"com.xuecheng.api"})//扫描接口
-@ComponentScan(basePackages={"com.xuecheng.manage_cms"})//扫描本项目下的所有类
+//扫描实体类
+@EntityScan("com.xuecheng.framework.domain.cms")
+//扫描接口
+@ComponentScan(basePackages={"com.xuecheng.api"})
+//扫描本项目下的所有类
+@ComponentScan(basePackages={"com.xuecheng.manage_cms"})
 public class ManageCmsApplication {
+
     public static void main(String[] args) {
-        SpringApplication.run(ManageCmsApplication.class,args);
+        SpringApplication.run(ManageCmsApplication.class);
     }
+
 }

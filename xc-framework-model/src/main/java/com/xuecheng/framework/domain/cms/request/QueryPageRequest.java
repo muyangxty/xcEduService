@@ -4,13 +4,12 @@ import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 
 /**
- * @author Administrator
- * @version 1.0
- * @create 2018-09-12 14:59
- **/
+ * 页面查询请求
+ * @author MuYang
+ * @date 2019/11/25
+ */
 @Data
 public class QueryPageRequest {
-    //接收页面查询的查询条件
     //站点id
     //站点id
     @ApiModelProperty("站点id")
@@ -23,5 +22,4 @@ public class QueryPageRequest {
     private String pageAliase;
     //模版id
     private String templateId;
-    //....
 }

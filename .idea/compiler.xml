@@ -26,7 +26,6 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="xc-framework-common" options="-parameters" />
       <module name="xc-framework-model" options="-parameters" />
-      <module name="xc-framework-parent" options="" />
       <module name="xc-framework-utils" options="-parameters" />
       <module name="xc-service-api" options="-parameters" />
       <module name="xc-service-manage-cms" options="-parameters" />
