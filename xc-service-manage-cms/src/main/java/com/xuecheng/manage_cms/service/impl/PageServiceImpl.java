@@ -2,7 +2,9 @@ package com.xuecheng.manage_cms.service.impl;
 
 import com.xuecheng.framework.domain.cms.CmsPage;
 import com.xuecheng.framework.domain.cms.request.QueryPageRequest;
+import com.xuecheng.framework.domain.cms.response.CmsCode;
 import com.xuecheng.framework.domain.cms.response.CmsPageResult;
+import com.xuecheng.framework.exception.ExceptionCast;
 import com.xuecheng.framework.model.response.CommonCode;
 import com.xuecheng.framework.model.response.QueryResponseResult;
 import com.xuecheng.framework.model.response.QueryResult;
@@ -98,8 +100,8 @@ public class PageServiceImpl implements IPageService {
         String pageWebPath = cmsPage.getPageWebPath();
         CmsPage result = cmsPageRepository.findByPageNameAndSiteIdAndPageWebPath(pageName, siteId, pageWebPath);
         if (result != null) {
-            //添加失败
-            return new CmsPageResult(CommonCode.FAIL, null);
+            //添加失败,抛出异常
+            ExceptionCast.cast(CmsCode.CMS_ADDPAGE_EXISTSNAME);
         }
         //校验页面名称、站点Id、页面webpath
         cmsPage.setPageId(null);
