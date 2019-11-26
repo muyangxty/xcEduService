@@ -5,9 +5,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.*;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.List;
@@ -47,5 +45,22 @@ public class CmsPageRepositoryTest {
         System.err.println(pageName);
     }
 
+    //自定义条件查询测试
+    @Test
+    public void testFindAllByExample(){
+        int page = 0;
+        int size = 10;
+        Pageable pageable = PageRequest.of(page, size);
+        //条件值对象
+        CmsPage cmsPage = new CmsPage();
+        cmsPage.setSiteId("5a751fab6abb5044e0d19ea1");
+        //条件匹配器
+        ExampleMatcher matching = ExampleMatcher.matching();
+        //定义Example
+        Example<CmsPage> example = Example.of(cmsPage, matching);
+
+        Page<CmsPage> content = cmsPageRepository.findAll(example, pageable);
+        System.err.println(content);
+    }
 
 }
