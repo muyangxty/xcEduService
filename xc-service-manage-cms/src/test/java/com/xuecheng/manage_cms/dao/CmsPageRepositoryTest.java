@@ -1,6 +1,7 @@
 package com.xuecheng.manage_cms.dao;
 
 import com.xuecheng.framework.domain.cms.CmsPage;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,7 +21,6 @@ public class CmsPageRepositoryTest {
 
     @Autowired
     private CmsPageRepository cmsPageRepository;
-
 
     @Test
     public void testFindAll(){
@@ -62,5 +62,6 @@ public class CmsPageRepositoryTest {
         Page<CmsPage> content = cmsPageRepository.findAll(example, pageable);
         System.err.println(content);
     }
+
 
 }

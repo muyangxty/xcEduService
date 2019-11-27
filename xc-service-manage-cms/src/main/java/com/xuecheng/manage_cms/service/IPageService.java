@@ -1,10 +1,12 @@
 package com.xuecheng.manage_cms.service;
 
+import com.xuecheng.framework.domain.cms.CmsConfig;
 import com.xuecheng.framework.domain.cms.CmsPage;
 import com.xuecheng.framework.domain.cms.request.QueryPageRequest;
 import com.xuecheng.framework.domain.cms.response.CmsPageResult;
 import com.xuecheng.framework.model.response.QueryResponseResult;
 import com.xuecheng.framework.model.response.ResponseResult;
+
 
 /**
  * @author MuYang
@@ -14,8 +16,9 @@ public interface IPageService {
 
     /**
      * 页面查询
-     * @param page 当前页
-     * @param size 每页显示记录数
+     *
+     * @param page             当前页
+     * @param size             每页显示记录数
      * @param queryPageRequest
      * @return
      */
@@ -23,6 +26,7 @@ public interface IPageService {
 
     /**
      * 新增
+     *
      * @param cmsPage
      * @return
      */
@@ -30,6 +34,7 @@ public interface IPageService {
 
     /**
      * 根据页面id查询页面
+     *
      * @param id 页面id
      * @return
      */
@@ -37,7 +42,8 @@ public interface IPageService {
 
     /**
      * 修改页面
-     * @param id 页面id
+     *
+     * @param id      页面id
      * @param cmsPage 页面数据
      * @return
      */
@@ -45,8 +51,27 @@ public interface IPageService {
 
     /**
      * 根据id,删除页面
+     *
      * @param id 页面id
      * @return
      */
     ResponseResult delete(String id);
+
+    /**
+     * 根据id查询CMS配置
+     *
+     * @param id
+     * @return
+     */
+    CmsConfig getConfigById(String id);
+
+    /**
+     * 执行页面静态化
+     *
+     * @param pageId 页面id
+     * @return
+     */
+    String getPageHtml(String pageId);
+
+
 }
