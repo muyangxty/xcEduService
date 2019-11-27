@@ -92,7 +92,7 @@ public class PageServiceImpl implements IPageService {
     @Override
     public CmsPageResult add(CmsPage cmsPage) {
         if (cmsPage == null){
-
+            ExceptionCast.cast(CmsCode.CMS_ADDPAGE_EXISTSNAME);
         }
         //获取页面名称、站点Id、页面webpath
         String pageName = cmsPage.getPageName();
