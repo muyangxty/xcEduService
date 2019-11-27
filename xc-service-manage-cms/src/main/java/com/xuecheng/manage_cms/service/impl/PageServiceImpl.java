@@ -98,6 +98,7 @@ public class PageServiceImpl implements IPageService {
         String pageName = cmsPage.getPageName();
         String siteId = cmsPage.getSiteId();
         String pageWebPath = cmsPage.getPageWebPath();
+
         CmsPage result = cmsPageRepository.findByPageNameAndSiteIdAndPageWebPath(pageName, siteId, pageWebPath);
         if (result != null) {
             //添加失败,抛出异常
