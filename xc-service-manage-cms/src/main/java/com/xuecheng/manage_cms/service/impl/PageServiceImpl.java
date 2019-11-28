@@ -231,7 +231,10 @@ public class PageServiceImpl implements IPageService {
 
     /**
      * 执行页面静态化
-     *
+     * 静态化程序获取页面的DataUrl
+     * 静态化程序远程请求DataUrl获取数据模型
+     * 静态化程序获取页面的模板信息
+     * 执行页面静态化
      * @param pageId 页面id
      * @return
      */
